@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+int calcular_pi(double precisao) {
+    double pi = 0.0;
+    double termo;
+    int i = 0;
+
+    do {
+        termo = 4.0 / (2 * i + 1) * (i % 2 == 0 ? 1 : -1);
+        pi += termo;
+        i++;
+    } while (fabs(pi - M_PI) > precisao);
+
+    return i;
+}
+
+int main() {
+    double precisao;
+
+    printf("Digite a precisão desejada para pi: ");
+    scanf("%lf", &precisao);
+
+    int iteracoes = calcular_pi(precisao);
+   
+    printf("Número de iterações necessárias: %d\n", iteracoes);
+
+    return 0;
+}
