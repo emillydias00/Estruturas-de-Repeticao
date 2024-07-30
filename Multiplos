@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int X;
+    int contador = 1;
+    int multiplos_2 = 0, multiplos_3 = 0, multiplos_5 = 0;
+    int multiplos_2_3_5 = 0;
+   
+    printf("Digite o valor de X: ");
+    scanf("%d", &X);
+
+    while (contador <= X) {
+        if (contador % 2 == 0) {
+            multiplos_2++;
+        }
+        if (contador % 3 == 0) {
+            multiplos_3++;
+        }
+        if (contador % 5 == 0) {
+            multiplos_5++;
+        }
+        if (contador % 2 == 0 && contador % 3 == 0 && contador % 5 == 0) {
+            multiplos_2_3_5++;
+        }
+        contador++;
+    }
+
+    printf("Múltiplos de 2: %d\n", multiplos_2);
+    printf("Múltiplos de 3: %d\n", multiplos_3);
+    printf("Múltiplos de 5: %d\n", multiplos_5);
+    printf("Múltiplos de todos: %d\n", multiplos_2_3_5);
+
+    return 0;
+}
