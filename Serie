@@ -1,0 +1,26 @@
+int main() {
+    int n, x0, x1;
+
+    printf("Digite o valor de n: ");
+    scanf("%d", &n);
+
+    printf("Digite o valor de x0: ");
+    scanf("%d", &x0);
+
+    printf("Digite o valor de x1: ");
+    scanf("%d", &x1);
+
+    printf("Os termos da série são:\n");
+
+    printf("x0: %d\n", x0);
+    printf("x1: %d\n", x1);
+
+    for (int i = 2; i <= n; i++) {
+        int xn = 4 * x1 - 2 * x0;
+        printf("x%d: %d\n", i, xn);
+        x0 = x1;
+        x1 = xn;
+    }
+
+    return 0;
+}
